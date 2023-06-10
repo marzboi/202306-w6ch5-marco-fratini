@@ -1,32 +1,27 @@
 [
   {
-    "id": "1",
-    "thing": "JuanandJuan",
-    "origin": "NitinBalls"
-  },
-  {
-    "id": "2",
+    "id": 2,
     "thing": "Juan",
     "origin": "balls"
   },
   {
-    "id": "3",
+    "id": 3,
+    "thing": "hola",
+    "origin": "balls"
+  },
+  {
+    "id": 4,
+    "thing": "hola",
+    "origin": "balls"
+  },
+  {
+    "id": 5,
     "thing": "Juan",
     "origin": "balls"
   },
   {
-    "id": "4",
-    "thing": "Juan",
-    "origin": "balls"
-  },
-  {
-    "id": "5",
-    "thing": "Juan",
-    "origin": "balls"
-  },
-  {
-    "id": "6",
-    "thing": "Juan",
+    "id": 6,
+    "thing": "hola",
     "origin": "balls"
   }
 ]

@@ -16,7 +16,7 @@ export class ThingsController {
   }
 
   async getById(request: Request, response: Response) {
-    response.send(await this.repo.readByID(request.params.id));
+    response.send(await this.repo.readByID(request.body.id));
   }
 
   async post(request: Request, response: Response) {
@@ -28,6 +28,6 @@ export class ThingsController {
   }
 
   async deleteById(request: Request, response: Response) {
-    response.send(await this.repo.delete(request.params.id));
+    response.send(await this.repo.delete(request.body.id));
   }
 }
