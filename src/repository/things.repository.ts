@@ -19,4 +19,12 @@ export class ThingsRepo {
     const stringData = await fs.readFile(file, { encoding: 'utf-8' });
     return JSON.parse(stringData) as Things[];
   }
+
+  async create(body: Things) {
+    const data = await fs.readFile(file, 'utf-8');
+    let things = JSON.parse(data);
+    things = [...things, body];
+    const updatedData = JSON.stringify(things, null, 2);
+    await fs.writeFile(file, updatedData, { encoding: 'utf-8' });
+  }
 }

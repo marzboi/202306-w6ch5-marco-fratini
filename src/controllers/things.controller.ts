@@ -21,8 +21,9 @@ export class ThingsController {
     response.send(thingID);
   }
 
-  post(request: Request, response: Response) {
-    response.send('Post Sample!: ' + request.body.user);
+  async post(request: Request, response: Response) {
+    await this.repo.create(request.body);
+    response.send('Success!!');
   }
 
   patch(request: Request, response: Response) {

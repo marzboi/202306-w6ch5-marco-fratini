@@ -17,13 +17,4 @@ app.use(morgan('dev'));
 app.use(cors(corsOptions));
 app.use(express.json());
 
-app.use((_req, _res, next) => {
-  debug('Soy un middleware');
-  next();
-});
-
-app.get('/', (req, res) => {
-  res.send('Hello Express!');
-});
-
 app.use('/things', thingsRouter);
