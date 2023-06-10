@@ -16,21 +16,18 @@ export class ThingsController {
   }
 
   async getById(request: Request, response: Response) {
-    const data = await this.repo.readAll();
-    const thingID = data.find((item) => item.id === request.params.id);
-    response.send(thingID);
+    response.send(await this.repo.readByID(request.params.id));
   }
 
   async post(request: Request, response: Response) {
-    await this.repo.create(request.body);
-    response.send('Success!!');
+    response.send(await this.repo.create(request.body));
   }
 
-  patch(request: Request, response: Response) {
-    response.send('Patch Sample!: ' + request.body.user);
+  async patch(request: Request, response: Response) {
+    response.send(await this.repo.update(request.body, request.params.id));
   }
 
-  deleteById(request: Request, response: Response) {
-    response.send('Delete Sample!: ' + request.body.user);
+  async deleteById(request: Request, response: Response) {
+    response.send(await this.repo.delete(request.params.id));
   }
 }
