@@ -24,7 +24,7 @@ export class ThingsController {
   }
 
   async patch(request: Request, response: Response) {
-    response.send(await this.repo.update(request.body));
+    response.send(await this.repo.update(request.body, request.params.id));
   }
 
   async deleteById(request: Request, response: Response) {

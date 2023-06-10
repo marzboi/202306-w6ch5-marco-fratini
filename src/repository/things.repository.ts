@@ -34,15 +34,15 @@ export class ThingsRepo {
     await fs.writeFile(file, updatedData, { encoding: 'utf-8' });
   }
 
-  async update(body: Things) {
-    const data = await fs.readFile(file, 'utf-8');
-    let things = JSON.parse(data);
-    things = [
-      ...things,
-      { id: body.id, things: body.things, origin: body.things },
-    ];
-    const updatedData = JSON.stringify(things, null, 2);
-    await fs.writeFile(file, updatedData, { encoding: 'utf-8' });
+  async update(body: Things, id: string) {
+    const stringData = await fs.readFile(file, { encoding: 'utf-8' });
+    const data = JSON.parse(stringData);
+    const updatedThings = data.map((item: Things) =>
+      item.id === id ? body : item
+    );
+    await fs.writeFile(file, JSON.stringify(updatedThings, null, 2), {
+      encoding: 'utf-8',
+    });
   }
 
   async delete(id: string) {
