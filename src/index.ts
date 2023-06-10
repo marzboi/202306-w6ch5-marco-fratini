@@ -2,7 +2,7 @@ import http from 'http';
 import { app } from './app.js';
 import * as dotenv from 'dotenv';
 import createDebug from 'debug';
-const debug = createDebug('W6');
+const debug = createDebug('Things');
 
 dotenv.config();
 const PORT = process.env.PORT || 4444;
