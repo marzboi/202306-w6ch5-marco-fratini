@@ -4,15 +4,16 @@ const debug = createDebug('W6:SampleRepo');
 
 type Things = {
   id: number;
-  things: string;
+  name: string;
   origin: string;
+  year: number;
 };
 
 const file = './things.json';
 
 export class ThingsRepo {
   constructor() {
-    debug('Things Repo');
+    debug('Things Repo initialized');
   }
 
   async readAll() {
