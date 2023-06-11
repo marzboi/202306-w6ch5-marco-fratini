@@ -16,7 +16,7 @@ export class ThingsController {
   }
 
   async getById(request: Request, response: Response) {
-    response.send(await this.repo.readByID(request.body.id));
+    response.send(await this.repo.readByID(request.params.id));
   }
 
   async post(request: Request, response: Response) {
