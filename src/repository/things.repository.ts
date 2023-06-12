@@ -4,6 +4,7 @@ const debug = createDebug('W6:SampleRepo');
 
 type Things = {
   id: number;
+  image: string;
   name: string;
   origin: string;
   year: number;
