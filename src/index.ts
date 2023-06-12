@@ -14,7 +14,3 @@ server.listen(PORT);
 server.on('listening', () => {
   debug('Listening on port ' + PORT);
 });
-
-server.on('error', (error) => {
-  console.log(error.message);
-});
