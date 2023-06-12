@@ -30,6 +30,13 @@ export class ThingsRepo {
   async create(body: Things) {
     const data = await fs.readFile(file, 'utf-8');
     let things = JSON.parse(data);
+    let maxId = 0;
+    things.forEach((element: Things) => {
+      maxId = element.id;
+    });
+
+    const nextId = maxId + 1;
+    body.id = nextId;
     things = [...things, body];
     const updatedData = JSON.stringify(things, null, 2);
     await fs.writeFile(file, updatedData, { encoding: 'utf-8' });
